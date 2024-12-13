@@ -2,7 +2,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     const loveNoteButton = document.getElementById('loveNoteButton');
     const loveNote = document.getElementById('loveNote');
-
+    
     // The surprise love note
     const noteMessage = "To my dearest Filipe, every day with you feels like a Christmas miracle. I'm so grateful for your love and everything we've built together. ❤️🎄 You are my favorite person in the world, and I can't wait to create many more beautiful memories with you. Merry Christmas, my love! 💌";
 
@@ -26,4 +26,20 @@ document.addEventListener('DOMContentLoaded', function () {
             musicToggleButton.textContent = "Play Music 🎶";
         }
     });
+
+    // Function to create falling snowflakes
+    function createSnowflakes() {
+        const snowflake = document.createElement('div');
+        snowflake.classList.add('snowflake');
+        snowflake.style.left = Math.random() * window.innerWidth + 'px';
+        document.body.appendChild(snowflake);
+
+        // Snowflake falling animation
+        setTimeout(() => {
+            snowflake.style.animation = 'fall 5s linear infinite';
+        }, 100);
+    }
+
+    // Create snowflakes every 200ms
+    setInterval(createSnowflakes, 200);
 });
