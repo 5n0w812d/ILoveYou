@@ -1,4 +1,3 @@
-// Wait for the DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function () {
     const loveNoteButton = document.getElementById('loveNoteButton');
     const loveNote = document.getElementById('loveNote');
@@ -32,16 +31,14 @@ document.addEventListener('DOMContentLoaded', function () {
         const snowflake = document.createElement('div');
         snowflake.classList.add('snowflake');
         
-        // Randomize the position of the snowflakes
-        snowflake.style.left = Math.random() * window.innerWidth + 'px'; // Horizontal position
-        snowflake.style.animationDuration = Math.random() * 3 + 7 + 's'; // Vary the speed
-
+        // Random horizontal position for each snowflake
+        snowflake.style.left = Math.random() * window.innerWidth + 'px';
+        
+        // Random delay before the snowflake starts falling
+        snowflake.style.animationDelay = Math.random() * 5 + 's'; // Adds variation in fall speed
+        
+        // Add snowflake to body
         document.body.appendChild(snowflake);
-
-        // Snowflake falling animation
-        setTimeout(() => {
-            snowflake.style.animation = 'fall 5s linear infinite';
-        }, 100);
     }
 
     // Create snowflakes every 200ms
