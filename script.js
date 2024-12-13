@@ -31,7 +31,11 @@ document.addEventListener('DOMContentLoaded', function () {
     function createSnowflakes() {
         const snowflake = document.createElement('div');
         snowflake.classList.add('snowflake');
+        
+        // Set random position for the snowflake
         snowflake.style.left = Math.random() * window.innerWidth + 'px';
+        
+        // Add snowflake to the body
         document.body.appendChild(snowflake);
 
         // Snowflake falling animation
