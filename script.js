@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const backgroundMusic = document.getElementById('backgroundMusic');
     const musicToggleButton = document.getElementById('musicToggleButton');
     
-    // The surprise love note
     const noteMessage = "To my dearest Filipe, every day with you feels like a Christmas miracle. I'm so grateful for your love and everything we've built together. ❤️🎄 You are my favorite person in the world, and I can't wait to create many more beautiful memories with you. Merry Christmas, my love! 💌";
 
     loveNoteButton.addEventListener('click', function () {
@@ -30,12 +29,13 @@ document.addEventListener('DOMContentLoaded', function () {
             confetti.classList.add("confetti");
             confetti.style.left = Math.random() * window.innerWidth + "px"; // Random horizontal position
             confetti.style.animationDuration = Math.random() * 3 + 2 + "s"; // Random duration for falling speed
+            confetti.style.animationTimingFunction = "ease-in"; // Smooth animation
             document.body.appendChild(confetti);
 
             // Remove confetti after animation ends
             setTimeout(function() {
                 confetti.remove();
-            }, 3000);  // Duration of animation
+            }, 5000);  // Extend duration of the confetti fall
         }
     }
 });
