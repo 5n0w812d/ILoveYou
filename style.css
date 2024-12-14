@@ -161,7 +161,7 @@ body::before {
     position: absolute;
     width: 10px;
     height: 10px;
-    background-color: red;
+    background-color: white;
     animation: confetti-fall 3s linear infinite;
     pointer-events: none;
 }
