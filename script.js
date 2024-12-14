@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (backgroundMusic.paused) {
             backgroundMusic.play();
             musicToggleButton.textContent = "Pause Music 🎶";
+            triggerConfetti(); // Trigger confetti when music starts
         } else {
             backgroundMusic.pause();
             musicToggleButton.textContent = "Play Music 🎶";
@@ -27,19 +28,20 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // Confetti logic to trigger on music toggle
-var confettiCount = 50;  // Number of confetti particles
-for (let i = 0; i < confettiCount; i++) {
-    var confetti = document.createElement("div");
-    confetti.classList.add("confetti");
-    confetti.style.left = Math.random() * window.innerWidth + "px"; // Random horizontal position
-    document.body.appendChild(confetti);
+    function triggerConfetti() {
+        var confettiCount = 50;  // Number of confetti particles
+        for (let i = 0; i < confettiCount; i++) {
+            var confetti = document.createElement("div");
+            confetti.classList.add("confetti");
+            confetti.style.left = Math.random() * window.innerWidth + "px"; // Random horizontal position
+            document.body.appendChild(confetti);
 
-    // Remove confetti after animation ends
-    setTimeout(function() {
-        confetti.remove();
-    }, 3000);  // Duration of animation
-}
-
+            // Remove confetti after animation ends
+            setTimeout(function() {
+                confetti.remove();
+            }, 3000);  // Duration of animation
+        }
+    }
 
     // Function to create falling snowflakes
     function createSnowflakes() {
