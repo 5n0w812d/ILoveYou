@@ -150,3 +150,23 @@ body::before {
 #musicToggleButton:hover {
     background-color: #F44336;
 }
+
+/* Snowflake Animation */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://www.transparenttextures.com/patterns/snow.png');
+    background-size: 50px 50px;
+    opacity: 0.1;
+    pointer-events: none;
+    animation: snowflakes 10s linear infinite;
+}
+
+@keyframes snowflakes {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100%); }
+}
